@@ -45,7 +45,7 @@ android {
         }
     }
 
-    productFlavors {//多渠道打包
+    productFlavors {//多渠道打包，命令行打包：gradlew assembleRelease
         xiaomi {
             applicationId 'com.wuxiaolong.gradle4android1'
             //manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'xiaomi')
