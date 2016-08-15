@@ -9,9 +9,10 @@ Gradle是一种基于Groovy的动态DSL，而Groovy语言是一种基于jvm的�
 
 [Gradle for Android（三）多渠道打包、配置签名信息](http://wuxiaolong.me/2016/04/01/gradle4android3/)
 
-# AndroidProgrammer
-我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
+# 微信公众号
+欢迎微信扫一扫关注：不止于技术分享，每天进步一点点。
+
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
 
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)
