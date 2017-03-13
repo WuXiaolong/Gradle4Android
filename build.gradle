@@ -5,7 +5,7 @@ buildscript {
         jcenter()//使用jcenter库
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.5.0'// 依赖android提供的1.5.0的gradle build
+        classpath 'com.android.tools.build:gradle:2.2.0'// 依赖android提供的1.5.0的gradle build
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

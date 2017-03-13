@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
-
+def supportVersion = "25.0.0"
 android {
-
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
@@ -14,6 +13,12 @@ android {
     }
     signingConfigs {//签名的配置
         release {
+            storeFile file("WuXiaolong.jks")
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
+        }
+        debug {
             storeFile file("WuXiaolong.jks")
             storePassword 'android'
             keyAlias 'android'
@@ -45,7 +50,16 @@ android {
         }
     }
 
-    productFlavors {//多渠道打包，命令行打包：gradlew assembleRelease
+    productFlavors {
+        //多渠道打包，命令行打包：gradlew assembleRelease
+        debugServer {
+            buildConfigField 'String', 'API_SERVER_URL', '"我的公众号：吴小龙同学"'
+        }
+
+        releaseServer {
+            buildConfigField 'String', 'API_SERVER_URL', '"http://wuxiaolong.me/"'
+        }
+
         xiaomi {
             applicationId 'com.wuxiaolong.gradle4android1'
             //manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'xiaomi')
@@ -56,10 +70,12 @@ android {
             //manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'googlepaly')
         }
     }
-    lintOptions {//设置编译的lint开关，程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建
+    lintOptions {
+        //设置编译的lint开关，程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建
         abortOnError false
     }
-//    compileOptions {//可以进行 Java 的版本配置，以便使用对应版本的一些新特性,让IDE使用JAVA8语法解析
+//    compileOptions {
+// 可以进行 Java 的版本配置，以便使用对应版本的一些新特性,让IDE使用JAVA8语法解析
 //        sourceCompatibility JavaVersion.VERSION_1_8
 //        targetCompatibility JavaVersion.VERSION_1_8
 //    }
@@ -68,7 +84,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile rootProject.ext.dependencies["appcompat-v7"]
+    compile 'com.android.support:appcompat-v7:' + supportVersion
     compile rootProject.ext.dependencies["design"]
 
 }
