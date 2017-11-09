@@ -22,3 +22,18 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+def androidSupportVersion = '25.3.1'
+ext {
+    //编译的 SDK 版本，如API20
+    compileSdkVersion = 25
+    //构建工具的版本，其中包括了打包工具aapt、dx等,如API20对应的build-tool的版本就是20.0.0
+    buildToolsVersion = "27.0.1"
+    //兼容的最低 SDK 版本
+    minSdkVersion = 17
+    //向前兼容，保存新旧两种逻辑，并通过 if-else 方法来判断执行哪种逻辑
+    targetSdkVersion = 22
+    appcompatV7 = "com.android.support:appcompat-v7:$androidSupportVersion"
+    constraintLayout = 'com.android.support.constraint:constraint-layout:1.0.2'
+    design = 'com.android.support:design:' + androidSupportVersion
+    supportV4 = 'com.android.support:support-v4:' + androidSupportVersion
+}
